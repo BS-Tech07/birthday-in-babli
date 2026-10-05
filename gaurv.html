@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Babli ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    color:white;
+    background:
+    radial-gradient(circle at 50% 35%,#45165f,#190622 45%,#050107 100%);
+}
+
+button{
+    border:0;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(135deg,#ff2f91,#8d2cff);
+    padding:15px 30px;
+    border-radius:50px;
+    font-size:17px;
+    box-shadow:0 0 30px #ff299055;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 50px #ff299099;
+}
+
+.screen{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:22px;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s;
+    z-index:10;
+}
+
+.screen.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.small{
+    font-size:12px;
+    letter-spacing:5px;
+    color:#ffd5eb;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(42px,9vw,100px);
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#fff,#ff62b3,#fff);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 20px #ff3d9a55);
+}
+
+p{
+    color:#f9dcec;
+    font-size:clamp(16px,3vw,21px);
+    line-height:1.8;
+    max-width:750px;
+}
+
+/* STARS */
+
+.star{
+    position:fixed;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+    z-index:1;
+}
+
+@keyframes twinkle{
+    from{opacity:.15}
+    to{opacity:1;transform:scale(1.6)}
+}
+
+/* BIG HEART */
+
+.heartBox{
+    width:270px;
+    height:270px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.heart{
+    width:175px;
+    height:175px;
+    background:#ff176f;
+    transform:rotate(-45deg);
+    position:absolute;
+    animation:pulse 1s infinite;
+    filter:drop-shadow(0 0 25px #ff176f)
+           drop-shadow(0 0 70px #ff176f88);
+}
+
+.heart:before,
+.heart:after{
+    content:"";
+    position:absolute;
+    width:175px;
+    height:175px;
+    background:#ff176f;
+    border-radius:50%;
+}
+
+.heart:before{
+    top:-87px;
+}
+
+.heart:after{
+    left:87px;
+}
+
+.heartText{
+    position:relative;
+    z-index:2;
+    font-size:70px;
+    font-weight:bold;
+}
+
+@keyframes pulse{
+    0%,100%{transform:rotate(-45deg) scale(1)}
+    50%{transform:rotate(-45deg) scale(1.12)}
+}
+
+/* BABLI */
+
+.babli{
+    font-size:clamp(70px,16vw,170px);
+    font-weight:900;
+    letter-spacing:7px;
+    background:linear-gradient(#fff,#ff55ae);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 30px #ff4da688);
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    to{filter:drop-shadow(0 0 55px #ff4da6)}
+}
+
+/* BALLOONS */
+
+.balloon{
+    position:fixed;
+    width:58px;
+    height:75px;
+    border-radius:50%;
+    bottom:-120px;
+    z-index:3;
+    animation:up 9s linear infinite;
+}
+
+.balloon:nth-of-type(1){left:6%;background:#ff438f}
+.balloon:nth-of-type(2){left:24%;background:#895cff;animation-delay:2s}
+.balloon:nth-of-type(3){right:22%;background:#ffd34d;animation-delay:4s}
+.balloon:nth-of-type(4){right:6%;background:#40dfff;animation-delay:1s}
+
+.balloon:after{
+    content:"";
+    position:absolute;
+    width:1px;
+    height:100px;
+    background:#ffffff55;
+    left:50%;
+    top:73px;
+}
+
+@keyframes up{
+    to{transform:translateY(-125vh) rotate(8deg)}
+}
+
+/* GLASS */
+
+.glass{
+    width:min(750px,94vw);
+    padding:35px;
+    border-radius:28px;
+    background:#ffffff0d;
+    border:1px solid #ffffff22;
+    backdrop-filter:blur(18px);
+    box-shadow:0 0 60px #ff4da61c;
+}
+
+/* CAKE */
+
+.cake{
+    width:250px;
+    height:210px;
+    position:relative;
+    margin:5px;
+}
+
+.plate{
+    position:absolute;
+    bottom:5px;
+    width:250px;
+    height:25px;
+    border-radius:50%;
+    background:#fff;
+}
+
+.layer{
+    position:absolute;
+    height:55px;
+    border-radius:12px;
+    background:linear-gradient(#ff77bd,#c6287d);
+}
+
+.l1{width:210px;left:20px;bottom:28px}
+.l2{width:170px;left:40px;bottom:76px}
+.l3{width:130px;left:60px;bottom:124px}
+
+.candle{
+    position:absolute;
+    width:11px;
+    height:48px;
+    background:white;
+    bottom:174px;
+    border-radius:5px;
+}
+
+.candle:nth-of-type(5){left:88px}
+.candle:nth-of-type(6){left:120px}
+.candle:nth-of-type(7){left:152px}
+
+.flame{
+    width:17px;
+    height:24px;
+    position:absolute;
+    top:-23px;
+    left:-3px;
+    border-radius:50%;
+    background:#ffd22e;
+    box-shadow:0 0 25px #ff9800;
+    animation:flame .5s infinite alternate;
+}
+
+@keyframes flame{
+    to{transform:scale(1.15) rotate(5deg)}
+}
+
+/* GALLERY */
+
+.gallery{
+    width:min(900px,95vw);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.photo{
+    height:155px;
+    overflow:hidden;
+    border-radius:18px;
+    background:#351642;
+    border:1px solid #ffffff22;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.photo:hover img{transform:scale(1.08)}
+
+.photo span{
+    display:flex;
+    height:100%;
+    align-items:center;
+    justify-content:center;
+    color:#eabed9;
+}
+
+/* TIMELINE */
+
+.timeline{
+    width:min(800px,94vw);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin-top:20px;
+}
+
+.memory{
+    padding:20px 10px;
+    border-radius:18px;
+    background:#ffffff0c;
+    border:1px solid #ffffff18;
+}
+
+.memory b{
+    color:#ff86c3;
+    display:block;
+    margin-bottom:8px;
+}
+
+/* ENVELOPE */
+
+.envelope{
+    width:320px;
+    max-width:90vw;
+    height:200px;
+    border-radius:15px;
+    background:#ec4b94;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 0 45px #ff419955;
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:#ff7abd;
+    clip-path:polygon(0 0,50% 55%,100% 0);
+}
+
+.envText{
+    position:absolute;
+    bottom:30px;
+    left:0;
+    right:0;
+    z-index:2;
+    font-weight:bold;
+}
+
+/* GIFT */
+
+.gift{
+    width:180px;
+    height:160px;
+    position:relative;
+    cursor:pointer;
+    animation:float 2s infinite ease-in-out;
+}
+
+.box{
+    position:absolute;
+    bottom:0;
+    width:180px;
+    height:120px;
+    border-radius:8px;
+    background:linear-gradient(135deg,#ff317f,#a91b6b);
+    box-shadow:0 0 40px #ff3b9055;
+}
+
+.box:before{
+    content:"";
+    position:absolute;
+    left:78px;
+    width:25px;
+    height:120px;
+    background:#ffd34e;
+}
+
+.lid{
+    position:absolute;
+    top:20px;
+    left:-10px;
+    width:200px;
+    height:35px;
+    border-radius:8px;
+    background:#ff5798;
+}
+
+.lid:after{
+    content:"🎀";
+    position:absolute;
+    font-size:52px;
+    top:-40px;
+    left:70px;
+}
+
+@keyframes float{
+    50%{transform:translateY(-10px)}
+}
+
+/* FALLING */
+
+.fall{
+    position:fixed;
+    top:-40px;
+    z-index:80;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* FIREWORK */
+
+.fire{
+    position:fixed;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#fff;
+    z-index:100;
+    animation:boom 1s forwards;
+}
+
+@keyframes boom{
+    to{
+        transform:translate(var(--x),var(--y));
+        opacity:0;
+    }
+}
+
+/* LOVE BUTTON */
+
+.loveButton{
+    margin-top:25px;
+}
+
+/* SECRET */
+
+.secret{
+    display:none;
+    margin-top:25px;
+    animation:appear 1s;
+}
+
+.secret.show{display:block}
+
+@keyframes appear{
+    from{opacity:0;transform:scale(.8)}
+    to{opacity:1;transform:scale(1)}
+}
+
+/* MUSIC */
+
+.music{
+    position:fixed;
+    right:15px;
+    top:15px;
+    z-index:200;
+    display:none;
+    width:48px;
+    height:48px;
+    padding:0;
+}
+
+/* MOBILE */
+
+@media(max-width:650px){
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .photo{
+        height:120px;
+    }
+
+    .timeline{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .heartBox{
+        transform:scale(.8);
+        margin-bottom:-10px;
+    }
+
+    .cake{
+        transform:scale(.75);
+        margin:-10px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div>
+
+<button class="music" id="musicBtn" onclick="musicToggle()">🔊</button>
+
+<audio id="music" loop>
+    <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- 1 INTRO -->
+
+<section class="screen active" id="intro">
+
+    <div class="small">A secret surprise is waiting...</div>
+
+    <h1>For Someone Special ❤️</h1>
+
+    <p>
+        I made a little something for you...
+    </p>
+
+    <button onclick="start()">
+        Open My Surprise ✨
+    </button>
+
+</section>
+
+
+<!-- 2 HEART -->
+
+<section class="screen" id="heartScreen">
+
+    <div class="heartBox">
+
+        <div class="heart"></div>
+
+        <div class="heartText">B</div>
+
+    </div>
+
+    <div class="small">Made with love</div>
+
+    <p>
+        Some people make life a little more beautiful...
+    </p>
+
+</section>
+
+
+<!-- 3 BABLI -->
+
+<section class="screen" id="nameScreen">
+
+    <div class="small">And that special person is</div>
+
+    <div class="babli">Babli</div>
+
+    <p>
+        ❤️ You are truly special.
+    </p>
+
+</section>
+
+
+<!-- 4 BIRTHDAY -->
+
+<section class="screen" id="birthdayScreen">
+
+    <div class="small">Today is your day</div>
+
+    <h1>Happy Birthday 🎂</h1>
+
+    <div class="cake">
+
+        <div class="plate"></div>
+
+        <div class="layer l1"></div>
+        <div class="layer l2"></div>
+        <div class="layer l3"></div>
+
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+
+    </div>
+
+    <p>Make a wish... ✨</p>
+
+    <button onclick="blow()">
+        Blow The Candles 🕯️
+    </button>
+
+</section>
+
+
+<!-- 5 GALLERY -->
+
+<section class="screen" id="galleryScreen">
+
+    <div class="small">Beautiful memories</div>
+
+    <h1>Moments With Babli 📸</h1>
+
+    <div class="gallery">
+
+        <div class="photo">
+            <img src="babli.jpg"
+            onerror="this.style.display='none'">
+            <span>❤️</span>
+        </div>
+
+        <div class="photo">
+            <img src="babli1.jpg"
+            onerror="this.style.display='none'">
+            <span>💕</span>
+        </div>
+
+        <div class="photo">
+            <img src="babli2.jpg"
+            onerror="this.style.display='none'">
+            <span>✨</span>
+        </div>
+
+        <div class="photo">
+            <img src="babli3.jpg"
+            onerror="this.style.display='none'">
+            <span>🌸</span>
+        </div>
+
+        <div class="photo">
+            <img src="babli4.jpg"
+            onerror="this.style.display='none'">
+            <span>💖</span>
+        </div>
+
+        <div class="photo">
+            <img src="babli5.jpg"
+            onerror="this.style.display='none'">
+            <span>🌹</span>
+        </div>
+
+    </div>
+
+    <button onclick="next('memoryScreen')">
+        Our Little Story ❤️
+    </button>
+
+</section>
+
+
+<!-- 6 MEMORY -->
+
+<section class="screen" id="memoryScreen">
+
+    <div class="small">Little moments</div>
+
+    <h1>Our Memories 💕</h1>
+
+    <div class="timeline">
+
+        <div class="memory">
+            <b>✨ First</b>
+            A beautiful beginning.
+        </div>
+
+        <div class="memory">
+            <b>❤️ Best</b>
+            A moment worth remembering.
+        </div>
+
+        <div class="memory">
+            <b>🌸 Smile</b>
+            Your smile makes everything better.
+        </div>
+
+        <div class="memory">
+            <b>💖 Today</b>
+            Celebrating you.
+        </div>
+
+    </div>
+
+    <button onclick="next('letterScreen')">
+        Continue 💌
+    </button>
+
+</section>
+
+
+<!-- 7 LETTER -->
+
+<section class="screen" id="letterScreen">
+
+    <div class="small">Something from my heart</div>
+
+    <h1>💌 A Letter For You</h1>
+
+    <div class="envelope" onclick="openLetter()">
+
+        <div class="envText">
+            Tap To Open ❤️
+        </div>
+
+    </div>
+
+    <div class="glass secret" id="letter">
+
+        <p>
+            Dear Babli ❤️
+            <br><br>
+
+            I don't need a special day to tell you
+            how special you are.
+            <br><br>
+
+            But today is your birthday,
+            so I have one more reason to say it.
+            <br><br>
+
+            Keep smiling, keep shining,
+            and always stay the beautiful person you are. 🌸
+        </p>
+
+        <button onclick="next('loveScreen')">
+            One More Thing ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- 8 LOVE BUTTON -->
+
+<section class="screen" id="loveScreen">
+
+    <div class="small">Tap the heart</div>
+
+    <div class="heartBox">
+
+        <div class="heart"></div>
+
+        <div class="heartText">❤️</div>
+
+    </div>
+
+    <button class="loveButton" onclick="loveBurst()">
+        Tap For A Surprise 💖
+    </button>
+
+    <div class="secret glass" id="loveText">
+
+        <h2 style="color:#ff8bc5;margin-bottom:15px">
+            Babli ❤️
+        </h2>
+
+        <p>
+            If I could give you one thing today,
+            I would give you a reason to smile
+            every single day. 🥰
+        </p>
+
+        <button onclick="next('giftScreen')">
+            Next Surprise 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- 9 GIFT -->
+
+<section class="screen" id="giftScreen">
+
+    <div class="small">One last little gift</div>
+
+    <h1>🎁 For You</h1>
+
+    <div class="gift" onclick="giftOpen()">
+
+        <div class="box"></div>
+        <div class="lid"></div>
+
+    </div>
+
+    <div class="secret glass" id="giftMessage">
+
+        <p>
+            You deserve happiness,
+            love and beautiful moments. ❤️
+        </p>
+
+        <button onclick="next('finalScreen');fireworks()">
+            Open The Final Surprise ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- 10 FINAL -->
+
+<section class="screen" id="finalScreen">
+
+    <div class="small">From my heart...</div>
+
+    <div class="babli">
+        Babli ❤️
+    </div>
+
+    <h1 style="font-size:clamp(35px,7vw,80px)">
+        Always Stay With Me
+    </h1>
+
+    <p>
+        Happy Birthday, Babli. 🎂❤️
+        <br>
+        Keep smiling. Always.
+    </p>
+
+    <button onclick="oneMore()">
+        One More Thing... 💌
+    </button>
+
+    <div class="secret glass" id="finalSecret">
+
+        <h2 style="color:#ff8bc5">
+            ❤️ You are special ❤️
+        </h2>
+
+        <p style="margin-top:15px">
+            No matter how many birthdays come,
+            I hope I get to wish you
+            every single one of them.
+            <br><br>
+            Always stay happy, Babli. 🌹
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* STARS */
+
+for(let i=0;i<140;i++){
+
+    const s=document.createElement("div");
+
+    s.className="star";
+
+    s.style.left=Math.random()*100+"%";
+    s.style.top=Math.random()*100+"%";
+    s.style.animationDelay=Math.random()*2+"s";
+
+    document.body.appendChild(s);
+}
+
+
+/* SCREEN */
+
+function next(id){
+
+    document.querySelectorAll(".screen")
+    .forEach(x=>x.classList.remove("active"));
+
+    document.getElementById(id)
+    .classList.add("active");
+
+}
+
+
+/* WAIT */
+
+const wait=ms =>
+new Promise(resolve=>setTimeout(resolve,ms));
+
+
+/* START */
+
+async function start(){
+
+    const music=document.getElementById("music");
+
+    music.play().catch(()=>{});
+
+    document.getElementById("musicBtn")
+    .style.display="block";
+
+    fallingStart();
+
+    next("heartScreen");
+
+    await wait(4000);
+
+    next("nameScreen");
+
+    await wait(4000);
+
+    next("birthdayScreen");
+
+}
+
+
+/* CANDLES */
+
+function blow(){
+
+    document.querySelectorAll(".flame")
+    .forEach(x=>x.style.display="none");
+
+    fireworks();
+    hearts();
+
+    setTimeout(()=>{
+        next("galleryScreen");
+    },1800);
+
+}
+
+
+/* LETTER */
+
+function openLetter(){
+
+    document.querySelector(".envelope")
+    .style.display="none";
+
+    document.getElementById("letter")
+    .classList.add("show");
+
+    hearts();
+
+}
+
+
+/* LOVE */
+
+function loveBurst(){
+
+    document.getElementById("loveText")
+    .classList.add("show");
+
+    fireworks();
+    hearts();
+
+}
+
+
+/* GIFT */
+
+function giftOpen(){
+
+    document.querySelector(".gift")
+    .style.display="none";
+
+    document.getElementById("giftMessage")
+    .classList.add("show");
+
+    fireworks();
+    hearts();
+
+}
+
+
+/* FINAL SECRET */
+
+function oneMore(){
+
+    document.getElementById("finalSecret")
+    .classList.add("show");
+
+    fireworks();
+    hearts();
+
+}
+
+
+/* FALLING */
+
+function falling(){
+
+    const e=document.createElement("div");
+
+    e.className="fall";
+
+    const things=[
+        "❤️","💖","💕","💗",
+        "🌹","🌸","✨","💝"
+    ];
+
+    e.innerHTML=
+        things[Math.floor(Math.random()*things.length)];
+
+    e.style.left=Math.random()*100+"vw";
+
+    e.style.fontSize=
+        15+Math.random()*25+"px";
+
+    e.style.animationDuration=
+        4+Math.random()*5+"s";
+
+    document.body.appendChild(e);
+
+    setTimeout(()=>e.remove(),10000);
+
+}
+
+function fallingStart(){
+
+    setInterval(falling,450);
+
+}
+
+function hearts(){
+
+    for(let i=0;i<35;i++){
+
+        setTimeout(falling,i*80);
+
+    }
+
+}
+
+
+/* FIREWORKS */
+
+function fireworks(){
+
+    for(let k=0;k<7;k++){
+
+        setTimeout(()=>{
+
+            const cx=15+Math.random()*70;
+            const cy=15+Math.random()*45;
+
+            for(let i=0;i<35;i++){
+
+                const f=document.createElement("div");
+
+                f.className="fire";
+
+                f.style.left=cx+"vw";
+                f.style.top=cy+"vh";
+
+                const angle=
+                    Math.random()*Math.PI*2;
+
+                const distance=
+                    50+Math.random()*170;
+
+                f.style.setProperty(
+                    "--x",
+                    Math.cos(angle)*distance+"px"
+                );
+
+                f.style.setProperty(
+                    "--y",
+                    Math.sin(angle)*distance+"px"
+                );
+
+                document.body.appendChild(f);
+
+                setTimeout(()=>f.remove(),1200);
+
+            }
+
+        },k*350);
+
+    }
+
+}
+
+
+/* MUSIC */
+
+function musicToggle(){
+
+    const m=document.getElementById("music");
+    const b=document.getElementById("musicBtn");
+
+    if(m.paused){
+
+        m.play();
+        b.innerHTML="🔊";
+
+    }else{
+
+        m.pause();
+        b.innerHTML="🔇";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
